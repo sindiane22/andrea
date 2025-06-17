@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrea Avi - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="TESTPROJET.css" rel="stylesheet" >
+</head>
+<body>
+  <nav>
+    <div class="logo">Andrea Avi</div>
+    <div class="burger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul id="nav-links">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#a-propos">À propos</a></li>
+      <li><a href="#projets">Mes projets</a></li>
+      <li><a href="#competences">Mes compétences</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-mobile" id="menu-mobile">
+      <a href="#accueil">Accueil</a>
+      <a href="#a-propos">À propos</a>
+      <a href="#projets">Mes projets</a>
+      <a href="#competences">Mes compétences</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+<!-- SECTION ACCUEIL  -->
+  <section id="accueil">
+    <h1>Web designer passionné,</h1>
+    <p>je transforme vos idées en expériences visuelles uniques et intuitives.
+Explorez mon univers créatif et découvrez comment je peux donner vie à votre projet.</p>
+  </section>
+
+  <!-- SECTION A PROPOS  -->
+
+  <section id="a-propos">
+    <h1>À propos</h1>
+    <p>Je suis Andrea Avi, créatif curieux et technicien rigoureux.
+Ma mission : concevoir des interfaces esthétiques, modernes et adaptées aux besoins de chaque utilisateur.
+Besoin d’un esprit design et technique ? Je suis la personne qu’il vous faut.</p>
+    <a href="cv_andrea_avi.pdf" class="btn-cv" download>Télécharger mon CV</a>
+  </section>
+
+  <!-- SECTION PROJET  -->
+  <section id="projets">
+    <h1>Mes projets</h1>
+    <ul class="projets-list">
+      <li>
+        <p>1. Programme qui demande l'âge et affiche "mineur" ou "majeur".</p>
+        <a href="#" class="btn-voir">Voir plus</a>
+      </li>
+      <li>
+        <p>2. Programme qui vérifie si un nombre est pair ou impair.</p>
+        <a href="#" class="btn-voir">Voir plus</a>
+      </li>
+      <li>
+        <p>3. Programme qui affiche le mois correspondant à un nombre.</p>
+        <a href="#" class="btn-voir">Voir plus</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- SECTION COMPETENCE  -->
+
+  <section id="competences">
+    <h2>Mes compétences</h2>
+    <div class="skills-container">
+      <div class="skill">
+        <label>HTML</label>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+      </div>
+      <div class="skill">
+        <label>CSS</label>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+      </div>
+      <div class="skill">
+        <label>JavaScript</label>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- SECTION CONTACT  -->
+
+  <section id="contact">
+    <h1>Contact</h1>
+
+    <h2>Un projet en tête ? Envie de collaborer ?</h2>
+    <p>N'hésitez pas à me laisser un message !
+Je suis à l'écoute de vos idées et prêt à concevoir des solutions sur-mesure.
+Parlons-en !</p>
+    <form onsubmit="event.preventDefault(); document.getElementById('message-success').style.display = 'block'; this.reset();">
+      <input type="text" name="nom" placeholder="Nom" required>
+      <input type="text" name="prenom" placeholder="Prénom" required>
+      <input type="text" name="sujet" placeholder="Sujet" required>
+      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+    <p id="message-success">Votre email a bien été enregistré.</p>
+  </section>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('menu-mobile').style.display = 'none';
+      });
+    });
+
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => { bar.style.width = width; }, 500);
+      });
+    });
+
+    function toggleMenu() {
+      const menu = document.getElementById('menu-mobile');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+</body>
+</html>

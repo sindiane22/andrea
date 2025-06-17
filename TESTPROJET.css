@@ -1,0 +1,170 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      padding: 0 ;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px;
+      background: #B33791;
+      color: #fff;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+    }
+    nav .logo { font-size: 1.5em; font-weight: bold; }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+    .burger {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+    }
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px;
+      transition: all 0.3s;
+    }
+    .menu-mobile {
+      display: none;
+      flex-direction: column;
+      background: #B33791;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .menu-mobile a {
+      color: white;
+      padding: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      text-align: center;
+      text-decoration: none;
+    }
+    section {
+      padding: 100px 20px;
+      min-height: 100vh;
+      transition: all 0.5s ease-in-out;
+      
+    }
+    section h2, section h1 {
+      text-align: center;
+      font-weight: bold;
+      color: #B33791;
+      margin-bottom: 20px;
+      text-size-adjust: 40px;
+      
+    }
+    #accueil { background: #fff; }
+    #a-propos { background: #f5eef3; color: #fff; }
+    #projets { background: #fff; }
+    #competences { background: #f5eef3; color: #fff; }
+    #contact { background: #fff; }
+
+    .btn-cv, .btn-voir {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #fff;
+      color: #B33791;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      font-weight: bold;
+    }
+    .btn-voir:hover, .btn-cv:hover, form button:hover {
+      transform: scale(1.05);
+    }
+    .skill {
+      margin: 10px;
+      width: 45%;
+      padding: 15px;
+    }
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .skill-bar {
+      background: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .skill-bar-fill {
+      height: 20px;
+      background: #B33791;
+      width: 0;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form input, form textarea {
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    form button {
+      padding: 10px;
+      background: #B33791;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    #message-success {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+    ul.projets-list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    ul.projets-list li {
+      width: 30%;
+      list-style: none;
+      background: white;
+      padding: 10px;
+      margin: 10px 0;
+      text-align: center;
+      border-radius: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .burger { display: flex; }
+      .skills-container { flex-direction: column; align-items: center; }
+      ul.projets-list li { width: 100%; }
+    }
+
+    label {
+      color: #B33791;
+    }
